@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="frameOneVM" type="com.codrive.app.modules.frameone.data.viewmodel.FrameOneVM"/>
+        <variable name="frameOneVM" type="com.codrive.app.BuildConfig"/>
     </data>
     <LinearLayout android:gravity="center_horizontal"
         android:id="@+id/linearColumncodrivetakesy"
@@ -13,44 +15,66 @@
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:orientation="vertical" style="@style/groupStylegray_900">
-            <FrameLayout android:id="@+id/frameStackcodrivetakesy"
-                android:layout_height="@dimen/_361pxv"
-                android:layout_marginEnd="@dimen/_34pxh"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/frameStackcodrivetakesy"
+                android:layout_width="312dp"
+                android:layout_height="154dp"
                 android:layout_marginStart="@dimen/_34pxh"
-                android:layout_marginTop="@dimen/_124pxv" android:layout_width="@dimen/_266pxh">
-                <TextView android:gravity="top|start"
-                    android:id="@+id/txtCoDriveTakesy"
-                    android:layout_gravity="bottom|start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_10pxv"
-                    android:layout_width="match_parent"
-                    android:text="@{frameOneVM.frameOneModel.txtCoDriveTakesy}"
-                    style="@style/txt" textUnderline="true" tools:text="@string/msg_codrive_takes_y"/>
-                <TextView android:ellipsize="end"
-                    android:gravity="top|start"
+                android:layout_marginTop="@dimen/_124pxv"
+                android:layout_marginEnd="@dimen/_34pxh">
+
+
+                <TextView
                     android:id="@+id/txtLanguage"
-                    android:layout_gravity="top|start"
+                    style="@style/txtLivvicbold44"
+                    android:layout_width="312dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_10pxv"
-                    android:layout_width="match_parent"
+                    android:ellipsize="end"
+                    android:gravity="top|start"
                     android:letterSpacing="0.02"
                     android:lineSpacingExtra="@dimen/_12pxh"
                     android:singleLine="true"
-                    android:text="@{frameOneVM.frameOneModel.txtLanguage}"
-                    style="@style/txtLivvicbold44" tools:text="@string/lbl_welcome_to"/>
-                <ImageView android:id="@+id/imageMappinremovebg"
-                    android:layout_gravity="top|end"
-                    android:layout_height="@dimen/_60pxh"
-                    android:layout_marginBottom="@dimen/_63pxv"
-                    android:layout_marginEnd="@dimen/_48pxh"
-                    android:layout_marginStart="@dimen/_48pxh"
-                    android:layout_marginTop="@dimen/_63pxv"
-                    android:layout_width="@dimen/_64pxh"
-                    android:scaleType="fitXY"
-                    imageRes="@{@drawable/img_mappinremovebg}"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_mappinremovebg"/>
-            </FrameLayout>
+                    android:text="@string/lbl_welcome_to"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/appHead"
+                    style="@style/txt"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:text="@string/lbl_codrive"
+                    app:layout_constraintEnd_toEndOf="@+id/txtLanguage"
+                    app:layout_constraintStart_toStartOf="@+id/txtLanguage"
+                    app:layout_constraintTop_toBottomOf="@+id/txtLanguage"
+                    tools:text="@string/lbl_codrive" />
+
+                <TextView
+                    android:id="@+id/txtCoDriveTakesy"
+                    style="@style/sub_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:gravity="top|start"
+                    android:text="@string/msg_takes_you_where"
+                    app:layout_constraintTop_toBottomOf="@+id/appHead"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:text="@string/msg_codrive_takes_y" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imageMappinremovebg"
+                android:layout_width="299dp"
+                android:layout_height="246dp"
+
+                android:layout_marginTop="20dp"
+                tools:ignore="ContentDescription"
+                android:layout_gravity="center"
+                tools:src="@drawable/front_image" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:ellipsize="end" android:gravity="center"
                 android:id="@+id/btnLetsGo"
@@ -58,7 +82,7 @@
                 android:layout_marginBottom="@dimen/_20pxv"
                 android:layout_marginEnd="@dimen/_32pxh"
                 android:layout_marginStart="@dimen/_32pxh"
-                android:layout_marginTop="@dimen/_240pxv"
+                android:layout_marginTop="100dp"
                 android:layout_width="match_parent"
                 android:paddingBottom="@dimen/_20pxv"
                 android:paddingEnd="@dimen/_30pxh"
@@ -68,6 +92,8 @@
                 android:text="@string/lbl_let_s_go"
                 android:textAllCaps="false"
                 style="@style/btnSolidRounded" tools:text="@string/lbl_let_s_go"/>
+
+
         </LinearLayout>
     </LinearLayout>
 </layout>

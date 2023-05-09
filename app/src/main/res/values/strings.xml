@@ -7,26 +7,20 @@
 <string name="lbl_create_trip">Create Trip</string>
 <string name="lbl_model">&#128663; Model</string>
 <string name="lbl_more">More</string>
-<string name="lbl_codrive">coDrive
-</string>
+<string name="lbl_codrive">coDrive</string>
 <string name="lbl_search">Search</string>
 <string name="lbl_total_cost">&#128663; Total Cost</string>
 <string name="lbl_or_sign_up_with">Or sign up with</string>
 <string name="lbl_vehicle_type">&#128663; Vehicle Type</string>
 <string name="msg_seats_availa">&#128186; Seats Available</string>
-<string name="lbl_welcome_to">Welcome to, </string>
+<string name="lbl_welcome_to">Welcome to,</string>
 <string name="lbl_select_location">Select Location</string>
 <string name="lbl_destination"> &#128205;Destination</string>
 <string name="lbl_favorites">Favorites</string>
 <string name="lbl_let_s_go">Let\u2019s Go!</string>
-<string name="msg_codrive_takes_y">coDrive
-Takes you where you go...
-
-
-</string>
+<string name="msg_codrive_takes_y">Takes you where you go...</string>
 <string name="lbl_publish">Publish</string>
 <string name="msg_start_locatio"> &#128205;Start Location</string>
 <string name="lbl_mileage">&#128663; Mileage</string>
-<string name="msg_takes_you_where">Takes you where you go...
-</string>
+<string name="msg_takes_you_where">Takes you where you go...</string>
 </resources>

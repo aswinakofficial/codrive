@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
-    <data>
-        <variable name="frameTwoVM" type="com.codrive.app.modules.frametwo.data.viewmodel.FrameTwoVM"/>
-    </data>
     <LinearLayout android:id="@+id/linearColumncodrivepikone"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylegray_901">
-        <ImageView android:id="@+id/imageCoDrivepikOne"
+
+        <ImageView
+            android:id="@+id/imageCoDrivepikOne"
+
+            android:layout_width="312dp"
+            android:layout_height="300dp"
             android:layout_gravity="start"
-            android:layout_height="@dimen/_292pxh"
-            android:layout_marginEnd="@dimen/_10pxh"
             android:layout_marginTop="@dimen/_47pxv"
-            android:layout_width="@dimen/_293pxh"
+            android:layout_marginEnd="@dimen/_10pxh"
             android:scaleType="fitXY"
-            imageRes="@{@drawable/img_codrivepik1}"
-            tools:ignore="ContentDescription" tools:src="@drawable/img_codrivepik1"/>
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/img_codrivepik1" />
         <LinearLayout android:gravity="start"
             android:id="@+id/linearRowvectortwo"
             android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
                 android:layout_marginStart="@dimen/_8pxh"
                 android:layout_weight="0.32" android:layout_width="0dp"
                 android:singleLine="true"
-                android:text="@{frameTwoVM.frameTwoModel.txtOrsignupwith}"
+                android:text="@string/lbl_or_sign_up_with"
                 style="@style/txtOutfitregular15" tools:text="@string/lbl_or_sign_up_with"/>
             <View android:background="@color/white_A700"
                 android:id="@+id/lineVectorThree"
