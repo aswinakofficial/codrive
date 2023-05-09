@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="frameOneVM" type="com.codrive.app.modules.frameone.data.viewmodel.FrameOneVM"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearColumncodrivetakesy"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearHome"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStylegray_900">
+            <FrameLayout android:id="@+id/frameStackcodrivetakesy"
+                android:layout_height="@dimen/_361pxv"
+                android:layout_marginEnd="@dimen/_34pxh"
+                android:layout_marginStart="@dimen/_34pxh"
+                android:layout_marginTop="@dimen/_124pxv" android:layout_width="@dimen/_266pxh">
+                <TextView android:gravity="top|start"
+                    android:id="@+id/txtCoDriveTakesy"
+                    android:layout_gravity="bottom|start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="match_parent"
+                    android:text="@{frameOneVM.frameOneModel.txtCoDriveTakesy}"
+                    style="@style/txt" textUnderline="true" tools:text="@string/msg_codrive_takes_y"/>
+                <TextView android:ellipsize="end"
+                    android:gravity="top|start"
+                    android:id="@+id/txtLanguage"
+                    android:layout_gravity="top|start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_width="match_parent"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="@dimen/_12pxh"
+                    android:singleLine="true"
+                    android:text="@{frameOneVM.frameOneModel.txtLanguage}"
+                    style="@style/txtLivvicbold44" tools:text="@string/lbl_welcome_to"/>
+                <ImageView android:id="@+id/imageMappinremovebg"
+                    android:layout_gravity="top|end"
+                    android:layout_height="@dimen/_60pxh"
+                    android:layout_marginBottom="@dimen/_63pxv"
+                    android:layout_marginEnd="@dimen/_48pxh"
+                    android:layout_marginStart="@dimen/_48pxh"
+                    android:layout_marginTop="@dimen/_63pxv"
+                    android:layout_width="@dimen/_64pxh"
+                    android:scaleType="fitXY"
+                    imageRes="@{@drawable/img_mappinremovebg}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_mappinremovebg"/>
+            </FrameLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:ellipsize="end" android:gravity="center"
+                android:id="@+id/btnLetsGo"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20pxv"
+                android:layout_marginEnd="@dimen/_32pxh"
+                android:layout_marginStart="@dimen/_32pxh"
+                android:layout_marginTop="@dimen/_240pxv"
+                android:layout_width="match_parent"
+                android:paddingBottom="@dimen/_20pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_20pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_let_s_go"
+                android:textAllCaps="false"
+                style="@style/btnSolidRounded" tools:text="@string/lbl_let_s_go"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

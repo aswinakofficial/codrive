@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="frameZeroVM" type="com.codrive.app.modules.framezero.data.viewmodel.FrameZeroVM"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearColumncodriveone"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <FrameLayout android:gravity="start" android:id="@+id/frameHome"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" style="@style/groupStylegray_900">
+            <ImageView android:id="@+id/imageCOdriveOne"
+                android:layout_gravity="center"
+                android:layout_height="@dimen/_396pxh"
+                android:layout_marginBottom="@dimen/_20pxv"
+                android:layout_marginEnd="@dimen/_7pxh"
+                android:layout_marginStart="@dimen/_8pxh"
+                android:layout_marginTop="@dimen/_40pxv"
+                android:layout_width="@dimen/_375pxh"
+                android:scaleType="fitXY"
+                imageRes="@{@drawable/img_codrive1}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_codrive1"/>
+        </FrameLayout>
+    </LinearLayout>
+</layout>
