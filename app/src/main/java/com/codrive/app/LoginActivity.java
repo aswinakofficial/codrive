@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
         loginEmail = findViewById(R.id.loginEmail);
         loginPass = findViewById(R.id.loginPass);
-        loginButton = findViewById(R.id.loginButton);
+        loginButton = findViewById(R.id.registerButton);
         signUpButton = findViewById(R.id.signUpButton);
 
         //Redirection to registration
