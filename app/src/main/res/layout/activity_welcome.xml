@@ -10,43 +10,52 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylewhite_A700">
-        <LinearLayout android:gravity="start"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearHome"
-            android:layout_height="match_parent"
+            style="@style/groupStylegray_900"
             android:layout_width="match_parent"
-            android:orientation="vertical" style="@style/groupStylegray_900">
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/frameStackcodrivetakesy"
-                android:layout_width="312dp"
-                android:layout_height="154dp"
-                android:layout_marginStart="@dimen/_34pxh"
-                android:layout_marginTop="@dimen/_124pxv"
-                android:layout_marginEnd="@dimen/_34pxh">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/imageMappinremovebg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.148"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
 
                 <TextView
                     android:id="@+id/txtLanguage"
                     style="@style/txtLivvicbold44"
-                    android:layout_width="312dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:ellipsize="end"
                     android:gravity="top|start"
                     android:letterSpacing="0.02"
                     android:lineSpacingExtra="@dimen/_12pxh"
                     android:singleLine="true"
                     android:text="@string/lbl_welcome_to"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.324" />
 
                 <TextView
                     android:id="@+id/appHead"
                     style="@style/txt"
-                    android:layout_width="310dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="top|start"
                     android:text="@string/lbl_codrive"
                     app:layout_constraintEnd_toEndOf="@+id/txtLanguage"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/txtLanguage"
                     app:layout_constraintTop_toBottomOf="@+id/txtLanguage"
                     tools:text="@string/lbl_codrive" />
@@ -54,47 +63,64 @@
                 <TextView
                     android:id="@+id/txtCoDriveTakesy"
                     style="@style/sub_txt"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|start"
                     android:gravity="top|start"
                     android:text="@string/msg_takes_you_where"
+                    app:layout_constraintEnd_toEndOf="@+id/appHead"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/appHead"
                     app:layout_constraintTop_toBottomOf="@+id/appHead"
-                    tools:layout_editor_absoluteX="16dp"
                     tools:text="@string/msg_codrive_takes_y" />
+
+                <ImageView
+                    android:layout_width="76dp"
+                    android:layout_height="62dp"
+                    android:src="@drawable/img_mappinremovebg"
+                    app:layout_constraintBottom_toTopOf="@+id/txtCoDriveTakesy"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/appHead"
+                    app:layout_constraintTop_toBottomOf="@+id/txtLanguage"
+                    app:layout_constraintVertical_bias="1.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
                 android:id="@+id/imageMappinremovebg"
-                android:layout_width="299dp"
-                android:layout_height="246dp"
+                android:layout_width="346dp"
+                android:layout_height="348dp"
 
-                android:layout_marginTop="20dp"
-                tools:ignore="ContentDescription"
-                android:layout_gravity="center"
-                tools:src="@drawable/front_image" />
+                android:layout_marginBottom="40dp"
+                android:src="@drawable/front_image"
+                app:layout_constraintBottom_toTopOf="@+id/btnLetsGo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="ContentDescription" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:ellipsize="end" android:gravity="center"
                 android:id="@+id/btnLetsGo"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_20pxv"
-                android:layout_marginEnd="@dimen/_32pxh"
-                android:layout_marginStart="@dimen/_32pxh"
-                android:layout_marginTop="100dp"
-                android:layout_width="match_parent"
-                android:paddingBottom="@dimen/_20pxv"
-                android:paddingEnd="@dimen/_30pxh"
+                style="@style/btnSolidRounded"
+                android:layout_width="323dp"
+                android:layout_height="64dp"
+                android:layout_marginBottom="68dp"
+                android:ellipsize="end"
+                android:gravity="center"
                 android:paddingStart="@dimen/_30pxh"
                 android:paddingTop="@dimen/_20pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingBottom="@dimen/_20pxv"
                 android:singleLine="true"
                 android:text="@string/lbl_let_s_go"
                 android:textAllCaps="false"
-                style="@style/btnSolidRounded" tools:text="@string/lbl_let_s_go"/>
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/lbl_let_s_go" />
 
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
