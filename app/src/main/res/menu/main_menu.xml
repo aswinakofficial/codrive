@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group android:visible="true">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Name" />
+        <item
+            android:id="@+id/edit_profile"
+
+            android:title="Edit profile" />
+        <item
+            android:id="@+id/travel_history"
+            android:title="Travel History" />
+        <item
+            android:id="@+id/transactions"
+            android:title="Trasaction History" />
+    </group>
+
+</menu>
