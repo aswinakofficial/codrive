@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SignupActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/rectangle_bg_gray_900"
@@ -29,18 +27,17 @@
         <!--        app:layout_constraintVertical_bias="0.61" />-->
 
 
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome,"
-            android:textSize="40sp"
-
-            android:transitionName="logo_text"
-            android:fontFamily="@font/livvic"
             android:layout_marginTop="-20dp"
-            android:textColor="@color/white"/>
+            android:fontFamily="@font/livvic"
+
+            android:text="Welcome,"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:transitionName="logo_text" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,10 +60,12 @@
                 app:boxBackgroundColor="@color/white"
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -77,10 +76,12 @@
                 android:hint="Email"
                 android:layout_marginTop="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userMail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/reg_phoneNo"
@@ -90,10 +91,12 @@
                 android:hint="Phone No"
                 android:layout_marginTop="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"/>
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -104,7 +107,7 @@
                 android:visibility="gone"
                 />
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/loginBtn"
+                android:id="@+id/registerButton"
                 style="@style/btnSolidRoundedSmallTxt"
                 android:layout_width="wrap_content"
                 android:layout_gravity="center_horizontal"

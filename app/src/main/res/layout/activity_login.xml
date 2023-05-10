@@ -54,12 +54,13 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:inputType="text"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -77,6 +78,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -105,7 +107,7 @@
             android:visibility="gone" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/loginBtn"
+            android:id="@+id/registerButton"
             style="@style/btnSolidRoundedSmallTxt"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -125,7 +127,7 @@
             tools:text="Login" />
 
         <Button
-            android:id="@+id/signupView"
+            android:id="@+id/signUpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
