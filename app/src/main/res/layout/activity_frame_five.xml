@@ -13,105 +13,107 @@
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:orientation="vertical" style="@style/groupStylegray_900">
-            <LinearLayout android:gravity="center_horizontal"
+
+            <LinearLayout
                 android:id="@+id/linearUsername"
+                style="@style/groupStylecornerRadius"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_33pxh"
                 android:layout_marginStart="@dimen/_33pxh"
                 android:layout_marginTop="@dimen/_75pxv"
-                android:layout_width="match_parent"
-                android:orientation="vertical" style="@style/groupStylecornerRadius">
-                <TextView android:ellipsize="end"
-                    android:gravity="center_horizontal"
-                    android:id="@+id/txtLanguage"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_1pxh"
+                android:layout_marginEnd="@dimen/_33pxh"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/startLocation"
+                    style="Widget.Material3.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
-                    android:paddingBottom="@dimen/_9pxv"
-                    android:paddingStart="@dimen/_16pxh"
-                    android:paddingTop="@dimen/_2pxv"
-                    android:singleLine="true"
-                    android:text="@{frameFiveVM.frameFiveModel.txtLanguage}"
-                    style="@style/txtSolidRounded" tools:text="@string/msg_start_locatio"/>
-                <TextView android:ellipsize="end"
-                    android:gravity="center_horizontal"
-                    android:id="@+id/txtLanguageOne"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_1pxh"
-                    android:layout_marginTop="@dimen/_30pxv"
+                    android:background="@color/white"
+                    android:hint="Start Location">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/destination"
+                    style="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
-                    android:paddingBottom="@dimen/_9pxv"
-                    android:paddingStart="@dimen/_16pxh"
-                    android:paddingTop="@dimen/_2pxv"
-                    android:singleLine="true"
-                    android:text="@{frameFiveVM.frameFiveModel.txtLanguageOne}"
-                    style="@style/txtSolidRounded" tools:text="@string/lbl_destination"/>
-                <TextView android:ellipsize="end"
-                    android:gravity="center_horizontal"
-                    android:id="@+id/txtGroupSixteen"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_1pxh"
-                    android:layout_marginTop="@dimen/_24pxv"
+                    android:background="@color/white"
+                    android:hint="Destination">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_phoneNo"
                     android:layout_width="match_parent"
-                    android:paddingBottom="@dimen/_7pxv"
-                    android:paddingStart="@dimen/_20pxh"
-                    android:paddingTop="@dimen/_4pxv"
-                    android:singleLine="true"
-                    android:text="@{frameFiveVM.frameFiveModel.txtGroupSixteen}"
-                    style="@style/txtSolidRounded" tools:text="@string/lbl_vehicle_type"/>
-                <TextView android:ellipsize="end"
-                    android:gravity="center_horizontal"
-                    android:id="@+id/txtGroupTwenty"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_1pxh"
-                    android:layout_marginTop="@dimen/_33pxv"
-                    android:layout_width="match_parent"
-                    android:paddingBottom="@dimen/_10pxv"
-                    android:paddingStart="@dimen/_20pxh"
-                    android:paddingTop="@dimen/_1pxv"
-                    android:singleLine="true"
-                    android:text="@{frameFiveVM.frameFiveModel.txtGroupTwenty}"
-                    style="@style/txtSolidRounded" tools:text="@string/msg_seats_availa"/>
-                <TextView android:ellipsize="end"
-                    android:gravity="center_horizontal"
+
+                    android:hint="Phone No"
+                    android:layout_marginTop="10dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
                     android:id="@+id/txtGroupNineteen"
+                    style="@style/txtSolidRounded"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_1pxh"
                     android:layout_marginTop="@dimen/_33pxv"
-                    android:layout_width="match_parent"
-                    android:paddingBottom="@dimen/_11pxv"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
                     android:paddingStart="@dimen/_20pxh"
                     android:paddingTop="@dimen/_1pxv"
+                    android:paddingBottom="@dimen/_11pxv"
                     android:singleLine="true"
                     android:text="@{frameFiveVM.frameFiveModel.txtGroupNineteen}"
-                    style="@style/txtSolidRounded" tools:text="@string/lbl_model"/>
-                <TextView android:ellipsize="end"
-                    android:gravity="center_horizontal"
+                    tools:text="@string/lbl_model" />
+
+                <TextView
                     android:id="@+id/txtGroupEighteen"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_1pxh"
-                    android:layout_marginTop="@dimen/_33pxv"
+                    style="@style/txtSolidRounded"
                     android:layout_width="match_parent"
-                    android:paddingBottom="@dimen/_8pxv"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_33pxv"
+                    android:layout_marginEnd="@dimen/_1pxh"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
                     android:paddingStart="@dimen/_21pxh"
                     android:paddingTop="@dimen/_3pxv"
+                    android:paddingBottom="@dimen/_8pxv"
                     android:singleLine="true"
                     android:text="@{frameFiveVM.frameFiveModel.txtGroupEighteen}"
-                    style="@style/txtSolidRounded" tools:text="@string/lbl_mileage"/>
-                <TextView android:ellipsize="end"
-                    android:gravity="center_horizontal"
+                    tools:text="@string/lbl_mileage" />
+
+                <TextView
                     android:id="@+id/txtTimeZone"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_1pxh"
-                    android:layout_marginTop="@dimen/_33pxv"
+                    style="@style/txtSolidRounded"
                     android:layout_width="match_parent"
-                    android:paddingBottom="@dimen/_11pxv"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_33pxv"
+                    android:layout_marginEnd="@dimen/_1pxh"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
                     android:paddingStart="@dimen/_21pxh"
                     android:paddingTop="@dimen/_1pxv"
+                    android:paddingBottom="@dimen/_11pxv"
                     android:singleLine="true"
                     android:text="@{frameFiveVM.frameFiveModel.txtTimeZone}"
-                    style="@style/txtSolidRounded" tools:text="@string/lbl_total_cost"/>
+                    tools:text="@string/lbl_total_cost" />
             </LinearLayout>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:ellipsize="end" android:gravity="center"
                 android:id="@+id/btnPublish"

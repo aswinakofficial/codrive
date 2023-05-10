@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
-    <data>
-        <variable name="frameThreeVM" type="com.codrive.app.modules.framethree.data.viewmodel.FrameThreeVM"/>
-    </data>
+
     <FrameLayout android:id="@+id/frameStackfavorites"
         android:layout_height="match_parent"
         android:layout_width="match_parent" style="@style/groupStylegray_901">
@@ -33,8 +31,8 @@
                     android:layout_marginStart="@dimen/_27pxh"
                     android:layout_weight="0.65"
                     android:layout_width="0dp" android:singleLine="true"
-                    android:text="@{frameThreeVM.frameThreeModel.txtFavorites}"
-                    style="@style/txtSFProDisplaysemibold15" tools:text="@string/lbl_favorites"/>
+                    android:text="hllo"
+                    style="@style/txtLivvicbold44" tools:text="@string/lbl_favorites"/>
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtMore"
                     android:layout_height="wrap_content"
@@ -43,8 +41,8 @@
                     android:layout_marginTop="@dimen/_1pxv"
                     android:layout_weight="0.35"
                     android:layout_width="0dp" android:singleLine="true"
-                    android:text="@{frameThreeVM.frameThreeModel.txtMore}"
-                    style="@style/txtSFProDisplayregular15" tools:text="@string/lbl_more"/>
+                    android:text="hllo3"
+                    style="@style/txtLivvicbold44" tools:text="@string/lbl_more"/>
             </LinearLayout>
             <HorizontalScrollView android:fillViewport="true"
                 android:id="@+id/horizontalScrollHorizontalscrollfav"
@@ -108,7 +106,7 @@
                                 android:layout_weight="0.78"
                                 android:layout_width="0dp"
                                 android:singleLine="true"
-                                android:text="@{frameThreeVM.frameThreeModel.txtCreateTrip}"
+                                android:text="hllo2"
                                 style="@style/txtRobotoromanextrabold20" tools:text="@string/lbl_create_trip"/>
                         </LinearLayout>
                     </LinearLayout>
