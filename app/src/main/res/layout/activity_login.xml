@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
-    <LinearLayout android:id="@+id/linearColumncodrivepikone"
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/linearColumncodrivepikone"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylegray_901">
+
 
         <ImageView
             android:id="@+id/imageCoDrivepikOne"
@@ -16,52 +17,51 @@
             android:layout_width="312dp"
             android:layout_height="300dp"
             android:layout_gravity="start"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="@dimen/_10pxh"
             android:scaleType="fitXY"
             tools:ignore="ContentDescription"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
             tools:src="@drawable/img_codrivepik1" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
 
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="288dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/Username"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:boxBackgroundColor="@color/white"
-                android:hint="Username"
                 android:layout_marginTop="10dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:hint="Username"
+                app:boxBackgroundColor="@color/white">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"/>
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/reg_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
-                app:boxBackgroundColor="@color/white"
-                app:passwordToggleEnabled="true"
                 android:transitionName="password_tran"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                app:boxBackgroundColor="@color/white"
+                app:passwordToggleEnabled="true">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword">
-                </com.google.android.material.textfield.TextInputEditText>
+                    android:inputType="textPassword"></com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
-
-
 
 
             <Button
@@ -73,12 +73,12 @@
                 android:background="#00000000"
                 android:elevation="0dp"
                 android:text="Forget Password?" />
+
             <ProgressBar
                 android:id="@+id/progress1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                />
+                android:visibility="gone" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/loginBtn"
@@ -112,7 +112,6 @@
                 android:textColor="#000" />
         </LinearLayout>
 
-
         <LinearLayout android:gravity="start"
             android:id="@+id/linearRowvectortwo"
             android:layout_height="wrap_content"
@@ -126,14 +125,7 @@
                 android:layout_marginBottom="@dimen/_9pxv"
                 android:layout_marginTop="@dimen/_8pxv"
                 android:layout_weight="0.34" android:layout_width="0dp"/>
-            <TextView android:ellipsize="end"
-                android:id="@+id/txtOrsignupwith"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8pxh"
-                android:layout_weight="0.32" android:layout_width="0dp"
-                android:singleLine="true"
-                android:text="@string/lbl_or_sign_up_with"
-                style="@style/txtOutfitregular15" tools:text="@string/lbl_or_sign_up_with"/>
+
             <View android:background="@color/white_A700"
                 android:id="@+id/lineVectorThree"
                 android:layout_height="@dimen/_1pxv"
@@ -142,17 +134,31 @@
                 android:layout_marginTop="@dimen/_8pxv"
                 android:layout_weight="0.34" android:layout_width="0dp"/>
         </LinearLayout>
-        <ImageView android:id="@+id/imageGooglevectorre"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="@dimen/_39pxh"
-            android:layout_marginBottom="@dimen/_20pxv"
-            android:layout_marginEnd="@dimen/_39pxh"
-            android:layout_marginStart="@dimen/_39pxh"
-            android:layout_marginTop="5dp"
+
+        <ImageView
+            android:id="@+id/imageGooglevectorre"
             android:layout_width="@dimen/_56pxh"
+            android:layout_height="@dimen/_39pxh"
+            android:layout_gravity="center_horizontal"
             android:scaleType="fitXY"
             android:src="@drawable/img_googlevectorre"
-            tools:ignore="ContentDescription" tools:src="@drawable/img_googlevectorre"/>
-    </LinearLayout>
+            tools:ignore="ContentDescription"
+            tools:layout_editor_absoluteX="176dp"
+            tools:layout_editor_absoluteY="645dp"
+            tools:src="@drawable/img_googlevectorre" />
+
+        <TextView
+            android:id="@+id/txtOrsignupwith"
+            style="@style/txtOutfitregular15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.32"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/lbl_or_sign_up_with"
+            tools:layout_editor_absoluteX="159dp"
+            tools:layout_editor_absoluteY="595dp"
+            tools:text="@string/lbl_or_sign_up_with" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

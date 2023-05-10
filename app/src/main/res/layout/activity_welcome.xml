@@ -93,13 +93,13 @@
 
                 android:layout_marginBottom="40dp"
                 android:src="@drawable/front_image"
-                app:layout_constraintBottom_toTopOf="@+id/btnLetsGo"
+                app:layout_constraintBottom_toTopOf="@+id/letsGoButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="ContentDescription" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnLetsGo"
+                android:id="@+id/letsGoButton"
                 style="@style/btnSolidRounded"
                 android:layout_width="323dp"
                 android:layout_height="64dp"
