@@ -108,14 +108,8 @@
             android:text="Forget Password?"
             android:textColor="#FFFFFF" />
 
-        <ProgressBar
-            android:id="@+id/progress1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
-
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/registerButton"
+            android:id="@+id/loginButton"
             style="@style/btnSolidRoundedSmallTxt"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -130,12 +124,18 @@
             android:paddingEnd="5dp"
             android:paddingBottom="5dp"
             android:singleLine="true"
-            android:text="@string/lbl_let_s_go"
+            android:text="Login"
             android:textAllCaps="false"
             tools:text="Login" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="69dp"
+            android:layout_height="40dp"
+            android:visibility="gone" />
+
         <Button
-            android:id="@+id/signUpButton"
+            android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
