@@ -65,11 +65,14 @@
             android:textColorHint="@color/black"
             app:boxBackgroundColor="#C8C2C2"
             app:boxStrokeColor="#070707"
+            app:endIconTint="#050505"
             app:hintTextColor="#040404"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:passwordToggleEnabled="false"
+            app:passwordToggleTintMode="multiply">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registerEmail"
@@ -92,13 +95,17 @@
             android:textColorHint="@color/black"
             app:boxBackgroundColor="#C8C2C2"
             app:boxStrokeColor="#070707"
+            app:endIconTint="#0E0D0D"
             app:hintTextColor="#040404"
             app:layout_constraintEnd_toEndOf="@+id/imageView3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#4E0E0E"
+            app:passwordToggleTintMode="multiply">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registerPass"
+                android:id="@+id/registrationPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
@@ -117,12 +124,16 @@
             android:textColorHint="@color/black"
             app:boxBackgroundColor="#C8C2C2"
             app:boxStrokeColor="#070707"
+            app:endIconTint="#070707"
             app:hintTextColor="#040404"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#4E0E0E"
+            app:passwordToggleTintMode="multiply">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registerConPass"
@@ -134,7 +145,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/registrationButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="70dp"
