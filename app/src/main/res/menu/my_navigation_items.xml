@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_message"
+        android:icon="@drawable/baseline_schedule_24"
+        android:title="Travel Schedules" />
+    <item
+        android:id="@+id/synch"
+        android:icon="@drawable/ic_baseline_sync_24"
+        android:title="Transaction History" />
+    <item
+        android:id="@+id/trash"
+        android:icon="@drawable/baseline_hotel_class_24"
+        android:title="ratings &amp; reviews" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Settings" />
+
+
+    <item android:title="Profile">
+        <menu>
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/ic_baseline_login_24"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_rate"
+                android:icon="@drawable/ic_baseline_rate_review_24"
+                android:title="Rate us" />
+        </menu>
+    </item>
+</menu>
