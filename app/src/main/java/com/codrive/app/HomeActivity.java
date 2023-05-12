@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import com.codrive.app.R;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -20,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
         MaterialToolbar toolbar = findViewById(R.id.topAppBar);
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.navigation_view);
@@ -51,8 +54,11 @@ public class HomeActivity extends AppCompatActivity {
                         Toast.makeText(HomeActivity.this, "Trash is Clicked",Toast.LENGTH_SHORT).show();break;
                     case R.id.settings:
                         Toast.makeText(HomeActivity.this, "Settings is Clicked",Toast.LENGTH_SHORT).show();break;
-                    case R.id.nav_login:
-                        Toast.makeText(HomeActivity.this, "Login is Clicked",Toast.LENGTH_SHORT).show();break;
+                    case R.id.logoutItem:
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+                        finish();
+                        Toast.makeText(HomeActivity.this, "Logging Out",Toast.LENGTH_SHORT).show();break;
                     case R.id.nav_share:
                         Toast.makeText(HomeActivity.this, "Share is clicked",Toast.LENGTH_SHORT).show();break;
                     case R.id.nav_rate:

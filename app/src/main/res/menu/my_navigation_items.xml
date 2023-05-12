@@ -28,7 +28,7 @@
     <item android:title="Profile">
         <menu>
             <item
-                android:id="@+id/nav_login"
+                android:id="@+id/logoutItem"
                 android:icon="@drawable/ic_baseline_login_24"
                 android:title="Logout" />
         </menu>
