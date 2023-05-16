@@ -50,6 +50,7 @@
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:srcCompat="@drawable/login_background" />
@@ -61,7 +62,7 @@
             android:layout_marginStart="18dp"
             android:layout_marginEnd="18dp"
 
-            android:layout_marginBottom="337dp"
+            android:layout_marginBottom="300dp"
             android:textColorHint="@color/black"
             app:boxBackgroundColor="#C8C2C2"
             app:boxStrokeColor="#070707"
@@ -70,7 +71,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+
             app:passwordToggleEnabled="false"
             app:passwordToggleTintMode="multiply">
 
@@ -116,7 +117,7 @@
             android:layout_width="333dp"
 
             android:layout_height="60dp"
-            android:layout_marginBottom="135dp"
+            android:layout_marginBottom="100dp"
             android:foregroundGravity="center"
             android:gravity="center"
             android:textColorHint="@color/black"

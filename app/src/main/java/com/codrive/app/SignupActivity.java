@@ -41,6 +41,7 @@ public class SignupActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(SignupActivity.this, "Loading..", Toast.LENGTH_SHORT).show();
                 String userEmail = registerEmail.getText().toString();
                 String userPass = registerPass.getText().toString();
                 String userConPass = registerConPass.getText().toString();
