@@ -35,6 +35,7 @@ public class UserProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_user_profile, container, false);
         logoutButton = view.findViewById(R.id.logoutButton);
         imageUploadButton = view.findViewById(R.id.imageUploadButton);
@@ -43,6 +44,16 @@ public class UserProfileFragment extends Fragment {
         profileName = view.findViewById(R.id.profileName);
         profileAge = view.findViewById(R.id.profileAge);
         profilePhone = view.findViewById(R.id.profilePhone);
+        profileEditButton = view.findViewById(R.id.profileEditButton);
+        profileConfirmButton = view.findViewById(R.id.profileConfirmButton);
+
+        //Disabling editability
+
+        profileEmail.setEnabled(false);
+        profileName.setEnabled(false);
+        profileAge.setEnabled(false);
+        profilePhone.setEnabled(false);
+        imageUploadButton.setClickable(false);
 
         //Selecting image using imagebutton
 
@@ -64,6 +75,28 @@ public class UserProfileFragment extends Fragment {
                 Intent intent = new Intent(view.getContext(), LoginActivity.class);
                 startActivity(intent);
                 getActivity().finish();
+            }
+        });
+
+        //Enabling editing
+
+        profileEditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                profileEmail.setEnabled(true);
+                profileEmail.setFocusableInTouchMode(true);
+                profileEmail.requestFocus();
+                profileName.setEnabled(true);
+                profileName.setFocusableInTouchMode(true);
+                profileName.requestFocus();
+                profileAge.setEnabled(true);
+                profileAge.setFocusableInTouchMode(true);
+                profileAge.requestFocus();
+                profilePhone.setEnabled(true);
+                profilePhone.setFocusableInTouchMode(true);
+                profilePhone.requestFocus();
+                profileConfirmButton.setClickable(true);
+
             }
         });
         return view;
