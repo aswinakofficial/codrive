@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "Loading..", Toast.LENGTH_SHORT).show();
                 String userEmail = loginEmail.getText().toString();
                 String userPass = loginPass.getText().toString();
 

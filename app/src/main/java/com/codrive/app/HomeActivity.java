@@ -24,6 +24,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.codrive.app.ActivityMainBinding;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -40,6 +41,7 @@ public class HomeActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
+
 
         binding.bottomNavigationView.setBackground(null);
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -61,6 +63,8 @@ public class HomeActivity extends AppCompatActivity {
 
             return true;
         });
+
+
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
