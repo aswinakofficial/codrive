@@ -103,4 +103,5 @@
     <style name="groupStylegray_901">
         <item name="android:background">@drawable/rectangle_bg_gray_900</item>
     </style>
+
 </resources>
