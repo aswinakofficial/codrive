@@ -100,15 +100,17 @@
             app:layout_constraintEnd_toEndOf="@+id/imageView3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-            app:passwordToggleEnabled="true"
+            app:passwordToggleEnabled="false"
             app:passwordToggleTint="#4E0E0E"
             app:passwordToggleTintMode="multiply">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registrationPass"
+                android:id="@+id/registerName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="Full Name"
+                android:inputType="text"
+
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,10 +137,10 @@
             app:passwordToggleTintMode="multiply">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registerConPass"
+                android:id="@+id/registrationPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Confirm Password"
+                android:hint="Password"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
