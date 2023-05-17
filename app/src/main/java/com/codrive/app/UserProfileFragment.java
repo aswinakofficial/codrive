@@ -6,6 +6,8 @@ import android.media.Image;
 import android.net.Uri;
 import android.net.vcn.VcnUnderlyingNetworkTemplate;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +15,20 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.concurrent.CompletableFuture;
 
 public class UserProfileFragment extends Fragment {
 
@@ -30,6 +41,11 @@ public class UserProfileFragment extends Fragment {
     TextInputEditText profilePhone;
     FloatingActionButton profileEditButton;
     FloatingActionButton profileConfirmButton;
+    public interface UserDetailsCallback {
+        void onUserDetailsLoaded(userModel userDetails);
+        void onUserDetailsNotFound();
+        void onUserDetailsError(String errorMessage);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -63,6 +79,42 @@ public class UserProfileFragment extends Fragment {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("image/*");
                 startActivityForResult(intent, 1234);
+            }
+        });
+
+        //Setting Profile Details
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        new FirebaseDatabaseHelper().readUser("UserDetails/" + user.getUid(), new FirebaseDatabaseHelper.DataStatus() {
+            @Override
+            public void DataIsLoaded(userModel userModel) {
+                if(!TextUtils.isEmpty(userModel.getEmail())){
+                    profileEmail.setText(userModel.getEmail());
+                }
+                if(!TextUtils.isEmpty(userModel.getFullName())){
+                    profileName.setText(userModel.getFullName());
+                }
+                if(!TextUtils.isEmpty(userModel.getAge())){
+                    profileAge.setText(Integer.parseInt(userModel.getEmail()));
+                }
+                if(!TextUtils.isEmpty(userModel.getPhoneNo())){
+                    profilePhone.setText(Integer.parseInt(userModel.getPhoneNo()));
+                }
+            }
+
+            @Override
+            public void DataIsInserted() {
+
+            }
+
+            @Override
+            public void DataIsUpdated() {
+
+            }
+
+            @Override
+            public void DataIsDeleted() {
+
             }
         });
 

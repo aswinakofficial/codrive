@@ -67,14 +67,10 @@ public class SignupActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             //checking if registration is successful
                             if (task.isSuccessful()){
-                                userModel userModel = new userModel();
-                                userModel.setEmail(userEmail);
-                                userModel.setFullName(userName);
+                                userModel userModel = new userModel(userName, userEmail, "", "");
                                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                DatabaseReference databaseReference = firebaseDatabase.getReference("UserDetails/"+user.getUid());
-                                databaseReference.child("User Name").setValue(userModel.getFullName());
-                                databaseReference.child("User Email").setValue(userModel.getEmail());
-
+                                DatabaseReference databaseReference = firebaseDatabase.getReference("UserDetails");
+                                databaseReference.child(user.getUid()).setValue(userModel);
                                 Toast.makeText(SignupActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(SignupActivity.this, LoginActivity.class));
                                 finish();
