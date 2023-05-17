@@ -119,7 +119,7 @@ public class UserProfileFragment extends Fragment {
             }
         });
 
-        //Enabling editing
+        //Enabling and disabling editing
 
         profileEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,7 +148,7 @@ public class UserProfileFragment extends Fragment {
             }
         });
 
-        //Updating the user details + uploading image
+        //Updating the user details
         profileConfirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
