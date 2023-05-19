@@ -10,7 +10,8 @@
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#3E0202">
 
         <androidx.cardview.widget.CardView
             android:layout_width="339dp"
@@ -119,7 +120,6 @@
                     android:layout_marginTop="16dp"
                     android:clickable="true"
                     android:src="@drawable/baseline_edit_24"
-                    app:backgroundTint="#ACAEB0"
                     app:layout_constraintEnd_toStartOf="@+id/profileConfirmButton"
                     app:layout_constraintHorizontal_bias="0.514"
                     app:layout_constraintStart_toStartOf="parent"
