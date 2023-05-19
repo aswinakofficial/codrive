@@ -70,6 +70,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showBottomDialog();
+                Toast.makeText(HomeActivity.this, "search button clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -136,7 +137,6 @@ public class HomeActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.bottomsheetlayout);
 
         LinearLayout videoLayout = dialog.findViewById(R.id.layoutVideo);
-        LinearLayout shortsLayout = dialog.findViewById(R.id.layoutShorts);
         LinearLayout liveLayout = dialog.findViewById(R.id.layoutLive);
         ImageView cancelButton = dialog.findViewById(R.id.cancelButton);
 
@@ -150,22 +150,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        shortsLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                dialog.dismiss();
-                Toast.makeText(HomeActivity.this,"Create a short is Clicked",Toast.LENGTH_SHORT).show();
-
-            }
-        });
 
         liveLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 dialog.dismiss();
-                Toast.makeText(HomeActivity.this,"Go live is Clicked",Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this,"Search is Clicked",Toast.LENGTH_SHORT).show();
 
             }
         });
