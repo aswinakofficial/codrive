@@ -7,109 +7,277 @@
     android:layout_height="match_parent"
     android:background="@drawable/dialogbg">
 
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_round_remove_24"
-        android:layout_gravity="center|top"
-        android:scaleType="centerCrop"/>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/createText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="viewStart"
-            android:text="Search Location"
-            android:padding="8dp"
-            android:textColor="@color/lavender"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="5dp"
-            android:textSize="25dp" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_clear_24"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="8dp"
-            android:id="@+id/cancelButton"/>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/layoutVideo"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="10dp">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/start_loc"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-            android:hint="Start Location"
-            android:textColorHint="@color/gray_800"
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_round_remove_24" />
 
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeColor="#0B0A0A"
-            app:hintTextColor="#070707"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/SearchDest"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/createText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="8dp"
+                    android:text="Create Trip"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/lavender"
+                    android:textSize="25dp" />
+
+                <ImageView
+                    android:id="@+id/cancelButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="250dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_baseline_clear_24" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/black"
+                    app:boxBackgroundColor="@color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/baseline_download_done_24"
+                        android:hint="Start Location" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layoutLive"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="30dp">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/black"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="#0B0A0A"
+
+                    app:endIconDrawable="@drawable/baseline_download_done_24"
+                    app:endIconTint="#100F0F">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/baseline_download_done_24"
+                        android:hint="Destination Location" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="393dp"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/date"
+                    android:layout_width="182dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:drawableRight="@android:drawable/ic_menu_my_calendar"
+                    android:drawableTint="@color/black"
+                    android:hint="Date"
+                    android:inputType="date"
+                    android:textColorHint="@color/black"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:boxStrokeColor="@color/black"
+                    app:boxBackgroundColor="@color/white"
+                    android:layout_marginTop="5dp"
+                    android:textColorHint="@color/black"
+                    android:layout_marginRight="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:hint="Time"
+                        android:inputType="time" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:inputType="text"
-                android:textColor="@color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeColor="@color/black"
+                android:textColorHint="@color/black"
+                >
 
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/baseline_person_24"
+                    android:hint="Vaccancy"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:text="Driver Details"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/black"
+                    android:textColorHint="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxStrokeColor="@color/black"
+                        android:textColorHint="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableRight="@android:drawable/ic_menu_call"
+                            android:drawableTint="@color/black"
+                            android:hint="Phone no:" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Vehicle Details"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:layout_marginTop="20dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:boxBackgroundColor="@color/white"
+                            android:layout_marginTop="10dp"
+                            android:textColorHint="@color/black"
+                            app:boxStrokeColor="@color/black">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Vehicle Model" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                app:boxBackgroundColor="@color/white"
+                                app:boxStrokeColor="@color/black"
+                                android:textColorHint="@color/black">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Registration no:" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="10dp"
+                                    app:boxBackgroundColor="@color/white"
+                                    app:boxStrokeColor="@color/black"
+                                    android:textColorHint="@color/black">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Mileage" />
+
+                                    <Button
+                                        android:id="@+id/button"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/lavender"
+                                        android:text="Create Trip"
 
 
+                                        app:cornerRadius="20dp" />
+                                </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
-        android:id="@+id/layoutLive"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:gravity="center_horizontal"
-        android:paddingTop="10dp"
-        android:paddingBottom="30dp">
+                                <TextView
+                                    android:id="@+id/textView6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="\n"
+                                    android:textSize="34sp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/tripSearchButton"
-            style="@style/btnSolidRoundedSmallTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:paddingStart="5dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="5dp"
-            android:paddingBottom="5dp"
-            android:singleLine="true"
-            android:text="Search"
-            android:textAllCaps="false"
-            tools:layout_conversion_absoluteHeight="50dp"
-            tools:layout_conversion_absoluteWidth="88dp"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="293dp" />
-
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n"
+                android:textSize="34sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
