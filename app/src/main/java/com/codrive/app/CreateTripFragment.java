@@ -16,13 +16,26 @@ import java.util.Calendar;
 
 public class CreateTripFragment extends Fragment {
     TextInputEditText date;
+    TextInputEditText createTripStartLoc;
+    TextInputEditText createTripDestination;
+    TextInputEditText createTripDate;
+    TextInputEditText createTripTime;
+    TextInputEditText createTripVacancy;
+    TextInputEditText createTripDriverName;
+    TextInputEditText createTripDriverNumber;
+    TextInputEditText createTripVehicleModel;
+    TextInputEditText createTripVehicleNumber;
+    TextInputEditText createTripVehicleMilage;
+    TextInputEditText createTripButton;
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_create_trip, container, false);
-        date = view.findViewById(R.id.date);
+
+        date = view.findViewById(R.id.createTripDate);
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
