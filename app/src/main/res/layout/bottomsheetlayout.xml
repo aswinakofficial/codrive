@@ -46,34 +46,48 @@
         android:id="@+id/layoutVideo"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90dp"
         android:layout_marginTop="10dp"
         android:padding="10dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/start_loc"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="match_parent"
 
-            android:hint="Start Location"
-            android:textColorHint="@color/gray_800"
 
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeColor="#0B0A0A"
-            app:hintTextColor="#070707"
             >
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/SearchDest"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/loc_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:inputType="text"
-                android:textColor="@color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:textColorHint="@color/gray_800"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeColor="#0B0A0A"
+                app:hintTextColor="#070707"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autocomplete"
+                    android:textColor="@color/gray_500"
+                    android:textColorHint="@color/gray_500"
+                    android:hint="Enter where you have to go :)"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/cardview_light_background"
+
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
