@@ -64,6 +64,7 @@
                     app:boxBackgroundColor="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/createTripStartLoc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableRight="@drawable/baseline_download_done_24"
@@ -95,6 +96,7 @@
                     app:endIconTint="#100F0F">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/createTripDestination"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableRight="@drawable/baseline_download_done_24"
@@ -109,7 +111,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/date"
+                    android:id="@+id/createTripDate"
                     android:layout_width="182dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
@@ -129,6 +131,7 @@
                     android:layout_marginRight="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/createTripTime"
                         android:layout_width="match_parent"
                         android:layout_height="58dp"
                         android:hint="Time"
@@ -150,6 +153,7 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/createTripVacancy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/baseline_person_24"
@@ -175,6 +179,7 @@
                     android:textColorHint="@color/black">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/createTripDriverName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name" />
@@ -188,6 +193,7 @@
                         android:textColorHint="@color/black">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/createTripDriverNumber"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableRight="@android:drawable/ic_menu_call"
@@ -213,6 +219,7 @@
                             app:boxStrokeColor="@color/black">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/createTripVehicleModel"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Vehicle Model" />
@@ -226,6 +233,7 @@
                                 android:textColorHint="@color/black">
 
                                 <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/createTripVehicleNumber"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="Registration no:" />
@@ -239,12 +247,13 @@
                                     android:textColorHint="@color/black">
 
                                     <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/createTripVehicleMileage"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:hint="Mileage" />
 
                                     <Button
-                                        android:id="@+id/button"
+                                        android:id="@+id/createTripButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
