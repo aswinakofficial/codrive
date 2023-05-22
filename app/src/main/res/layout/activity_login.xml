@@ -159,7 +159,7 @@
             tools:text="@string/lbl_or_sign_up_with" />
 
         <ImageView
-            android:id="@+id/imageGooglevectorre"
+            android:id="@+id/googleButton"
             android:layout_width="@dimen/_56pxh"
             android:layout_height="@dimen/_39pxh"
             android:layout_gravity="center_horizontal"

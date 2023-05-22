@@ -2,6 +2,8 @@ package com.codrive.app;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.media.Image;
 import android.net.Uri;
 import android.net.vcn.VcnUnderlyingNetworkTemplate;
@@ -136,6 +138,7 @@ public class UserProfileFragment extends Fragment {
                     profilePhone.requestFocus();
                     profileConfirmButton.setClickable(true);
                     isEditable = true;
+                    profileEditButton.setBackgroundTintList(ColorStateList.valueOf(Color.GREEN));
                 }
                 else{
                     profileName.setEnabled(false);
@@ -143,6 +146,8 @@ public class UserProfileFragment extends Fragment {
                     profilePhone.setEnabled(false);
                     profileConfirmButton.setClickable(false);
                     isEditable = false;
+                    int Red = Color.RED;
+                    profileEditButton.setBackgroundTintList(ColorStateList.valueOf(Color.RED));
                 }
 
             }

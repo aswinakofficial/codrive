@@ -22,6 +22,9 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.codrive.app.R;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -43,6 +46,13 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import androidx.fragment.app.Fragment;
 
@@ -59,6 +69,10 @@ public class HomeFragment extends Fragment implements  OnMapReadyCallback {
     private Marker currentLocationMarker;
 
     private LocationCallback locationCallback;
+    GoogleSignInOptions Gso;
+    GoogleSignInClient Gsc;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -66,6 +80,38 @@ public class HomeFragment extends Fragment implements  OnMapReadyCallback {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireActivity());
         locationRequest = createLocationRequest();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        //Storing user data for google sign in
+
+        Gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
+                requestIdToken(getString(R.string.default_web_client_id)).
+                requestEmail().build();
+        Gsc = GoogleSignIn.getClient(getContext(), Gso);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("UserDetails");
+        String desiredId = user.getUid(); // Replace with the ID you want to check
+
+        databaseReference.child(desiredId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                boolean dataExists = snapshot.exists();
+                if (dataExists) {
+                    // The data with the desired ID exists in the database
+                } else {
+                    userModel userModel = new userModel(user.getDisplayName(), user.getEmail(), "", "");
+                    DatabaseReference dref = firebaseDatabase.getReference("UserDetails");
+                    databaseReference.child(user.getUid()).setValue(userModel);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
         // Check location permission
         if (ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
