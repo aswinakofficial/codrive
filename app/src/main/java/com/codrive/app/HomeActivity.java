@@ -195,7 +195,7 @@ public class HomeActivity extends AppCompatActivity {
                 else {
                     Log.d("Lat Lng","Lat Lng Not Found");
                 }
-                dialog.dismiss();
+//                dialog.dismiss();
 
             }
         });

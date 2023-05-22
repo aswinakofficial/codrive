@@ -52,56 +52,73 @@
             <LinearLayout
                 android:id="@+id/layoutVideo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_marginTop="10dp"
+                android:textColorHint="@color/black"
+                app:boxBackgroundColor="@color/white"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:paddingTop="10dp">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutSearchStart"
+                    app:boxStrokeColor="@color/black"
                     android:layout_width="match_parent"
+                    android:background="@drawable/rounded_border"
                     android:layout_height="match_parent"
-                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/gray_500"
+                    android:textColorHint="@color/gray_500"
                     app:boxBackgroundColor="@color/white">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/createTripStartLoc"
+                    <AutoCompleteTextView
+                        android:id="@+id/autocomplete_ct_start_dest"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableRight="@drawable/baseline_download_done_24"
-                        android:hint="Start Location" />
+                        android:layout_height="match_parent"
+                        android:drawableEnd="@drawable/baseline_add_location_24"
+                        android:hint="Enter your start location"
+                        android:paddingTop="5dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray_500"
+                        android:singleLine="true" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
 
+
             <LinearLayout
                 android:id="@+id/layoutLive"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:gravity="center_horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="30dp">
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:textColorHint="@color/black"
+                app:boxBackgroundColor="@color/white"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:paddingTop="10dp">
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutSearchDest"
+                    app:boxStrokeColor="@color/black"
                     android:layout_width="match_parent"
+                    android:background="@drawable/rounded_border"
                     android:layout_height="match_parent"
-                    android:textColorHint="@color/black"
-                    app:boxBackgroundColor="@color/white"
-                    app:boxStrokeColor="#0B0A0A"
+                    app:hintTextColor="@color/gray_500"
+                    android:textColorHint="@color/gray_500"
+                    app:boxBackgroundColor="@color/white">
 
-                    app:endIconDrawable="@drawable/baseline_download_done_24"
-                    app:endIconTint="#100F0F">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/createTripDestination"
+                    <AutoCompleteTextView
+                        android:id="@+id/autocomplete_ct_end_dest"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableRight="@drawable/baseline_download_done_24"
-                        android:hint="Destination Location" />
-
+                        android:layout_height="match_parent"
+                        android:drawableEnd="@drawable/baseline_add_location_24"
+                        android:hint="Enter your Destination"
+                        android:paddingTop="5dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray_500"
+                        android:singleLine="true" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
