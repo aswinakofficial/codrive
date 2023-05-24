@@ -32,6 +32,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
@@ -105,6 +106,11 @@ public class UserProfileFragment extends Fragment {
 
             @Override
             public void DataIsDeleted() {
+
+            }
+
+            @Override
+            public void TripDataIsLoaded(List<tripModel> trips) {
 
             }
         });

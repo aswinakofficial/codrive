@@ -16,12 +16,14 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -46,6 +48,7 @@ import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
+    public static final String SEARCH_LOCATION = "com.codrive.app.JOIN_TRIP_SEARC_LOCATION";
     ActivityMainBinding binding;
     GoogleSignInOptions Gso;
     GoogleSignInClient Gsc;
@@ -74,6 +77,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
 
+
         binding.bottomNavigationView.setBackground(null);
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
@@ -101,6 +105,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showBottomDialog();
+
                 Toast.makeText(HomeActivity.this, "search button clicked", Toast.LENGTH_SHORT).show();
             }
         });
@@ -168,19 +173,25 @@ public class HomeActivity extends AppCompatActivity {
         LinearLayout videoLayout = dialog.findViewById(R.id.layoutVideo);
         LinearLayout liveLayout = dialog.findViewById(R.id.layoutLive);
         ImageView cancelButton = dialog.findViewById(R.id.cancelButton);
+        Button tripSearchButton = dialog.findViewById(R.id.tripSearchButton);
+        final String[] searchAddress = new String[1];
         // Access the AutoCompleteTextView inside the dialog layout
         final AutoCompleteTextView autoCompleteTextView=dialog.findViewById(R.id.autocomplete);
         autoCompleteTextView.setAdapter(new PlaceAutoSuggestAdapter(getApplicationContext(), R.layout.simple_list_item_1));
 
+
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 Log.d("Address : ",autoCompleteTextView.getText().toString());
                 LatLng latLng=getLatLngFromAddress(autoCompleteTextView.getText().toString());
                 if(latLng!=null) {
                     Log.d("Lat Lng : ", " " + latLng.latitude + " " + latLng.longitude);
                     Address address=getAddressFromLatLng(latLng);
+
                     if(address!=null) {
+                        searchAddress[0] = address.getAddressLine(0);
                         Log.d("Address : ", "" + address.toString());
                         Log.d("Address Line : ",""+address.getAddressLine(0));
                         Log.d("Phone : ",""+address.getPhone());
@@ -199,6 +210,19 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+
+        //Search clicked
+        tripSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                Toast.makeText(HomeActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(HomeActivity.this, ListTrips.class);
+                intent.putExtra(SEARCH_LOCATION, searchAddress[0]);
+                startActivity(intent);
+            }
+        });
+
         videoLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -71,7 +71,7 @@
                     app:boxBackgroundColor="@color/white">
 
                     <AutoCompleteTextView
-                        android:id="@+id/autocomplete_ct_start_dest"
+                        android:id="@+id/createTripStartLoc"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:drawableEnd="@drawable/baseline_add_location_24"
@@ -109,7 +109,7 @@
                     app:boxBackgroundColor="@color/white">
 
                     <AutoCompleteTextView
-                        android:id="@+id/autocomplete_ct_end_dest"
+                        android:id="@+id/createTripDestination"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:drawableEnd="@drawable/baseline_add_location_24"

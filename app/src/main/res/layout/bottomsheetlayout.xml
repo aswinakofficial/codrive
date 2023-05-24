@@ -105,11 +105,12 @@
         android:paddingBottom="30dp">
 
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/tripSearchButton"
             style="@style/btnSolidRoundedSmallTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#F8F8F8"
             android:ellipsize="end"
             android:gravity="center"
             android:paddingStart="5dp"
