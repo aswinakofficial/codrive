@@ -92,7 +92,7 @@ public class FirebaseDatabaseHelper {
                     CosineSimilarity cosineSimilarity = new CosineSimilarity();
                     double similarity = cosineSimilarity.cosineSimilarity(vector1, vector2);
 
-                    if (similarity >= 0.33 ) {
+                    if (similarity >= 0.33) {
                         String startLoc = tripSnapshot.child("startLocation").getValue(String.class);
                         String Date = tripSnapshot.child("date").getValue(String.class);
                         String time = tripSnapshot.child("time").getValue(String.class);

@@ -2,6 +2,7 @@ package com.codrive.app;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
@@ -15,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -80,6 +82,7 @@ public class CreateTripFragment extends Fragment {
         firebaseDatabase = FirebaseDatabase.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = firebaseDatabase.getReference("Trip/"+user.getUid());
+
         //Updating trip data base
 
         createTripButton.setOnClickListener(new View.OnClickListener() {
@@ -205,6 +208,14 @@ public class CreateTripFragment extends Fragment {
                     Log.d("Lat Lng","Lat Lng Not Found");
                 }
 
+            }
+        });
+
+        createTripTime = view.findViewById(R.id.createTripTime);
+        createTripTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTimePickerDialog();
             }
         });
         //auto complete start location
@@ -372,6 +383,32 @@ public class CreateTripFragment extends Fragment {
         // Inflate the layout for this fragment
         return view;
 
+    }
+    private void showTimePickerDialog() {
+        // Get the current time
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+
+        // Create a new TimePickerDialog instance
+        TimePickerDialog timePickerDialog = new TimePickerDialog(
+                requireContext(),
+                new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        // Handle the selected time
+                        String selectedTime = hourOfDay + ":" + minute;
+                        // Do something with the selected time, e.g., update a TextInputEditText
+                        createTripTime.setText(selectedTime);
+                    }
+                },
+                hour,
+                minute,
+                false // Set to true for 24-hour format, false for 12-hour format
+        );
+
+        // Show the time picker dialog
+        timePickerDialog.show();
     }
 
     private void showDatePickerDialog() {
