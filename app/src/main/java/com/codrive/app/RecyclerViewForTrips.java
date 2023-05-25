@@ -1,6 +1,7 @@
 package com.codrive.app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +66,8 @@ public class RecyclerViewForTrips extends RecyclerView.Adapter<RecyclerViewForTr
         holder.viewTripDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), trip.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "View clicked", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(view.getContext(), );
             }
         });
     }

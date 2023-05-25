@@ -216,7 +216,8 @@
                         android:layout_marginTop="10dp"
                         app:boxBackgroundColor="@color/white"
                         app:boxStrokeColor="@color/black"
-                        android:textColorHint="@color/black">
+                        android:textColorHint="@color/black"
+                        >
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/createTripDriverNumber"
@@ -224,7 +225,8 @@
                             android:layout_height="wrap_content"
                             android:drawableRight="@android:drawable/ic_menu_call"
                             android:drawableTint="@color/black"
-                            android:hint="Phone no:" />
+                            android:hint="Phone no:"
+                            android:textColor="#070707" />
 
                         <TextView
                             android:id="@+id/textView8"

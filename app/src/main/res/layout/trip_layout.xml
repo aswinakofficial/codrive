@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
+        android:backgroundTint="#FEFEFE"
         app:cardCornerRadius="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,15 +19,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="10dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:text="Start Location:"
                 android:textColor="@color/black"
                 android:textSize="15dp"
@@ -41,6 +40,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:text="kochi,vypin,kalamasserry,"
+                android:textColor="#070707"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -64,6 +64,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
                 android:text="kochi,vypin,kalamasserry,"
+                android:textColor="#090808"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -87,6 +88,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="44dp"
                 android:text="15/03/2023"
+                android:textColor="#070606"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView14" />
@@ -110,6 +112,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="100dp"
                 android:text="12:30"
+                android:textColor="#070606"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView17" />
@@ -118,7 +121,7 @@
                 android:id="@+id/viewTripDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:backgroundTint="#56DC8A"
