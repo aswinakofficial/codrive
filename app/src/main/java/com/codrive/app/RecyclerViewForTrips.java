@@ -68,7 +68,6 @@ public class RecyclerViewForTrips extends RecyclerView.Adapter<RecyclerViewForTr
         holder.viewTripDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "View clicked", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(view.getContext(), ViewTripDetails.class);
                 intent.putExtra(TRIP_DETAILS, trip);
                 view.getContext().startActivity(intent);

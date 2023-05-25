@@ -282,7 +282,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:hint="Mileage"
-                                        android:textColor="@color/black"/>
+                                        android:inputType="number"
+                                        android:textColor="@color/black" />
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
