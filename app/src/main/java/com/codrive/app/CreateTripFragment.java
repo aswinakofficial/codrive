@@ -31,8 +31,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 
 public class CreateTripFragment extends Fragment {
@@ -113,7 +116,15 @@ public class CreateTripFragment extends Fragment {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (snapshot.exists()) {
-                                    Toast.makeText(view.getContext(), "A Trip Already Exists", Toast.LENGTH_SHORT).show();
+                                    // Get the date value from the snapshot
+                                    String storedDate = snapshot.child("date").getValue(String.class);
+
+
+
+                                    // Convert the stored date to a Date object
+                                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                                    java.util.Date storedDateTime = null;
+                                    Toast.makeText(view.getContext(), "A Trip Already Exists" + dateFormat, Toast.LENGTH_SHORT).show();
                                 } else {
                                     Toast.makeText(view.getContext(), "Trip Created Successfully", Toast.LENGTH_SHORT).show();
                                     reference.setValue(trip);
