@@ -1,5 +1,6 @@
 package com.codrive.app;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewForTrips extends RecyclerView.Adapter<RecyclerViewForTrips.TripView>{
+    public static final String TRIP_DETAILS = "com.codrive.app.coDrive.TRIP_DETAILS";
     private Context context;
     List<tripModel> trips = new ArrayList<>();
 
@@ -67,7 +69,10 @@ public class RecyclerViewForTrips extends RecyclerView.Adapter<RecyclerViewForTr
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "View clicked", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(view.getContext(), );
+                Intent intent = new Intent(view.getContext(), ViewTripDetails.class);
+                intent.putExtra(TRIP_DETAILS, trip);
+                view.getContext().startActivity(intent);
+                ((Activity) view.getContext()).finish();
             }
         });
     }

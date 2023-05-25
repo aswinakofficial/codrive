@@ -226,7 +226,8 @@
                             android:drawableRight="@android:drawable/ic_menu_call"
                             android:drawableTint="@color/black"
                             android:hint="Phone no:"
-                            android:textColor="#070707" />
+                            android:textColor="@color/black"
+                            />
 
                         <TextView
                             android:id="@+id/textView8"
