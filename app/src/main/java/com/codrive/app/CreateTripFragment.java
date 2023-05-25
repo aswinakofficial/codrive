@@ -31,8 +31,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 
 public class CreateTripFragment extends Fragment {
@@ -114,10 +118,44 @@ public class CreateTripFragment extends Fragment {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (snapshot.exists()) {
-                                    Toast.makeText(view.getContext(), "A Trip Already Exists", Toast.LENGTH_SHORT).show();
+                                    String storedDate = snapshot.child("date").getValue(String.class);
+
+                                    // Get the current date
+                                    Date currentDate = new Date();
+
+                                    // Convert the stored date to a Date object
+                                    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy", Locale.getDefault());
+                                    Date storedDateTime = null;
+                                    try {
+                                        storedDateTime = dateFormat.parse(storedDate);
+                                    } catch (ParseException e) {
+                                        throw new RuntimeException(e);
+                                    }
+//                                    try {
+//                                        storedDateTime = dateFormat.parse(storedDate);
+//                                    } catch (ParseException e) {
+//                                        e.printStackTrace();
+//                                    }
+
+                                    if (storedDateTime != null) {
+                                        // Compare stored date with current date
+                                        if (storedDateTime.before(currentDate)) {
+                                            // Delete the trip snapshot from the database
+                                            snapshot.getRef().removeValue();
+                                            DatabaseReference dref = FirebaseDatabase.getInstance().getReference("TripHistory/"+trip.getTripID());
+                                            dref.setValue(trip);
+                                            Toast.makeText(view.getContext(), "Trip Created Successfully", Toast.LENGTH_SHORT).show();
+                                            reference.setValue(trip);
+                                        } else {
+                                            Toast.makeText(view.getContext(), "A Trip Already Exists"+storedDateTime, Toast.LENGTH_SHORT).show();
+                                        }
+                                    } else {
+                                        Toast.makeText(view.getContext(), "Error parsing stored date", Toast.LENGTH_SHORT).show();
+                                    }
                                 } else {
                                     Toast.makeText(view.getContext(), "Trip Created Successfully", Toast.LENGTH_SHORT).show();
                                     reference.setValue(trip);
+                                    // Clear input fields
                                     createTripStartLoc.getText().clear();
                                     createTripDestination.getText().clear();
                                     date.getText().clear();
@@ -135,6 +173,7 @@ public class CreateTripFragment extends Fragment {
                                     pickupPoint5.getText().clear();
                                 }
                             }
+
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
@@ -414,7 +453,7 @@ public class CreateTripFragment extends Fragment {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 // Handle the selected date
-                String selectedDate = (month + 1) + "/" + dayOfMonth + "/" + year;
+                String selectedDate = dayOfMonth + "/" +  (month + 1) + "/" + year;
                 date.setText(selectedDate);
             }
         }, Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
