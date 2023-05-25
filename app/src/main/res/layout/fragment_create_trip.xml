@@ -135,6 +135,7 @@
                     android:layout_marginLeft="10dp"
                     android:drawableRight="@android:drawable/ic_menu_my_calendar"
                     android:drawableTint="@color/black"
+                    android:editable="false"
                     android:hint="Date"
                     android:inputType="date"
                     android:textColor="@color/black"
@@ -155,9 +156,10 @@
                         android:layout_height="58dp"
                         android:drawableRight="@drawable/baseline_schedule_24"
                         android:drawableTint="#000000"
+                        android:editable="false"
                         android:hint="Time"
-                        android:textColor="@color/black"
-                        android:inputType="time" />
+                        android:inputType="time"
+                        android:textColor="@color/black" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
@@ -214,7 +216,8 @@
                         android:layout_marginTop="10dp"
                         app:boxBackgroundColor="@color/white"
                         app:boxStrokeColor="@color/black"
-                        android:textColorHint="@color/black">
+                        android:textColorHint="@color/black"
+                        >
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/createTripDriverNumber"
@@ -222,7 +225,8 @@
                             android:layout_height="wrap_content"
                             android:drawableRight="@android:drawable/ic_menu_call"
                             android:drawableTint="@color/black"
-                            android:hint="Phone no:" />
+                            android:hint="Phone no:"
+                            android:textColor="#070707" />
 
                         <TextView
                             android:id="@+id/textView8"
@@ -296,27 +300,27 @@
                                         android:padding="10dp"
                                         android:paddingTop="10dp">
 
-                                    <com.google.android.material.textfield.TextInputLayout
-                                        android:id="@+id/pkpoint1"
-                                        app:boxStrokeColor="@color/black"
-                                        android:layout_width="match_parent"
-                                        android:layout_marginTop="20dp"
-                                        android:layout_height="match_parent"
-                                        app:hintTextColor="@color/gray_500"
-                                        android:textColorHint="@color/black"
-                                        app:boxBackgroundColor="@color/white">
-
-                                        <AutoCompleteTextView
-                                            android:id="@+id/pickUppoint1"
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:id="@+id/pkpoint1"
+                                            app:boxStrokeColor="@color/black"
                                             android:layout_width="match_parent"
+                                            android:layout_marginTop="20dp"
                                             android:layout_height="match_parent"
-                                            android:drawableEnd="@drawable/baseline_add_location_24"
-                                            android:hint="Pickup Point 1"
-                                            android:textColor="@color/black"
-                                            android:backgroundTint="@color/white"
+                                            app:hintTextColor="@color/gray_500"
+                                            android:textColorHint="@color/black"
+                                            app:boxBackgroundColor="@color/white">
 
-                                          />
-                                    </com.google.android.material.textfield.TextInputLayout>
+                                            <AutoCompleteTextView
+                                                android:id="@+id/pickUppoint1"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:drawableEnd="@drawable/baseline_add_location_24"
+                                                android:hint="Pickup Point 1"
+                                                android:textColor="@color/black"
+                                                android:backgroundTint="@color/white"
+
+                                                />
+                                        </com.google.android.material.textfield.TextInputLayout>
                                     </LinearLayout>
 
                                     <LinearLayout

@@ -39,7 +39,6 @@ public class ListTrips extends AppCompatActivity {
 
             @Override
             public void TripDataIsLoaded(List<tripModel> trips) {
-                Toast.makeText(ListTrips.this, trips.toString(), Toast.LENGTH_SHORT).show();
                 adapter.setTrips(trips);
                 adapter.notifyDataSetChanged();
             }

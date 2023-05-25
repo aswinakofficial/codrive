@@ -8,6 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -215,11 +216,15 @@ public class HomeActivity extends AppCompatActivity {
         tripSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.dismiss();
-                Toast.makeText(HomeActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(HomeActivity.this, ListTrips.class);
-                intent.putExtra(SEARCH_LOCATION, searchAddress[0]);
-                startActivity(intent);
+                if(TextUtils.isEmpty(searchAddress[0])){
+                    Toast.makeText(HomeActivity.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent = new Intent(HomeActivity.this, ListTrips.class);
+                    intent.putExtra(SEARCH_LOCATION, searchAddress[0]);
+                    startActivity(intent);
+                }
+
             }
         });
 
