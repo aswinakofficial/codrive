@@ -98,6 +98,9 @@ public class ViewTripDetails extends AppCompatActivity {
         pickUpPoints.setAdapter(adapter);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
+        if(trip.getTripID().equals(user.getUid())){
+            joinTrip.setEnabled(false);
+        }
 
 
         new FirebaseDatabaseHelper().readUser("UserDetails/"+user.getUid(), new FirebaseDatabaseHelper.DataStatus() {
@@ -144,11 +147,11 @@ public class ViewTripDetails extends AppCompatActivity {
                     vacancyUpdate--;
                     String pickUpPoint = pickUpPoints.getSelectedItem().toString();
                     DatabaseReference dref = firebaseDatabase.getReference("Trip/"+trip.getTripID());
-                    dref.child("vacancy").setValue(vacancyUpdate);
+                    dref.child("vacancy").setValue(""+vacancyUpdate);
 
                     //Adding Passenger details
                     TripJoinerModel joiner = new TripJoinerModel(user.getUid(),passengerName.getText().toString(), passengerAge.getText().toString(), passengerNumber.getText().toString(), pickUpPoint);
-                    databaseReference.child("passengers/"+ user.getUid()).setValue(joiner);
+                    databaseReference.child("passengers/"+ passengerName.getText().toString()).setValue(joiner);
                     Toast.makeText(ViewTripDetails.this, "Trip Added", Toast.LENGTH_SHORT).show();
                     Intent intent1 = new Intent(ViewTripDetails.this, HomeActivity.class);
                     startActivity(intent1);

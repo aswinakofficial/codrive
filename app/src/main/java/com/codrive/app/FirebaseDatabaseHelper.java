@@ -6,6 +6,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +27,7 @@ public class FirebaseDatabaseHelper {
     DatabaseReference databaseReference;
 
     userModel userModel = new userModel();
+    FirebaseUser user;
 
     public interface DataStatus{
         void DataIsLoaded(userModel userModel);
@@ -43,6 +45,7 @@ public class FirebaseDatabaseHelper {
     public void readUser(String reference, DataStatus dataStatus)
     {
         databaseReference = firebaseDatabase.getReference(reference);
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -71,9 +74,7 @@ public class FirebaseDatabaseHelper {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot tripSnapshot: snapshot.getChildren()){
                     String tripID = tripSnapshot.getKey();
-                    if(tripID.equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
-                        return;
-                    }
+                    user = FirebaseAuth.getInstance().getCurrentUser();
                     String Destination = tripSnapshot.child("destination").getValue(String.class);
                     destination.toLowerCase();
                     Destination.toLowerCase();
