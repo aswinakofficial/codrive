@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -70,6 +71,9 @@ public class FirebaseDatabaseHelper {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot tripSnapshot: snapshot.getChildren()){
                     String tripID = tripSnapshot.getKey();
+                    if(tripID.equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                        return;
+                    }
                     String Destination = tripSnapshot.child("destination").getValue(String.class);
                     destination.toLowerCase();
                     Destination.toLowerCase();
@@ -117,9 +121,11 @@ public class FirebaseDatabaseHelper {
                         String pick3 = tripSnapshot.child("pickupPoint3").getValue(String.class);
                         String pick4 = tripSnapshot.child("pickupPoint4").getValue(String.class);
                         String pick5 = tripSnapshot.child("pickupPoint5").getValue(String.class);
-
-                        tripModel trip = new tripModel(tripID, startLoc, Destination, Date, time, vacancy, driverName, driverNo, vehicleModel, vehicleNo, vehicleMilega, pick1, pick2, pick3, pick4, pick5);
-                        trips.add(trip);
+                        int check_Vacancy = Integer.parseInt(vacancy);
+                        if(check_Vacancy != 0) {
+                            tripModel trip = new tripModel(tripID, startLoc, Destination, Date, time, vacancy, driverName, driverNo, vehicleModel, vehicleNo, vehicleMilega, pick1, pick2, pick3, pick4, pick5);
+                            trips.add(trip);
+                        }
                     } else {
 
                     }

@@ -218,7 +218,7 @@
                 android:popupBackground="@drawable/rectangle_bg_gray_101_radius_11" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/joinTrip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

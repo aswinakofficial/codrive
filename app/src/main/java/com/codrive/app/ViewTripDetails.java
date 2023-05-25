@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
@@ -35,13 +38,18 @@ public class ViewTripDetails extends AppCompatActivity {
     TextInputEditText passengerAge;
     TextInputEditText passengerNumber;
     FirebaseUser user;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
     Spinner pickUpPoints;
+    Button joinTrip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_trip_details);
         Intent intent = getIntent();
         tripModel trip = intent.getParcelableExtra(RecyclerViewForTrips.TRIP_DETAILS);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Trip/"+trip.getTripID());
 
         joinStartLocation = findViewById(R.id.joinStartLocation);
         joinDestination = findViewById(R.id.joindestination);
@@ -57,6 +65,7 @@ public class ViewTripDetails extends AppCompatActivity {
         passengerAge = findViewById(R.id.age1);
         passengerNumber = findViewById(R.id.phoneNumber1);
         pickUpPoints = findViewById(R.id.pickupLocations);
+        joinTrip = findViewById(R.id.joinTrip);
 
         //setting values
         joinStartLocation.setText(" Start Location: "+trip.getStartLocation());
@@ -89,6 +98,8 @@ public class ViewTripDetails extends AppCompatActivity {
         pickUpPoints.setAdapter(adapter);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
+
+
         new FirebaseDatabaseHelper().readUser("UserDetails/"+user.getUid(), new FirebaseDatabaseHelper.DataStatus() {
             @Override
             public void DataIsLoaded(userModel userModel) {
@@ -125,7 +136,25 @@ public class ViewTripDetails extends AppCompatActivity {
             }
         });
 
+        joinTrip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Updating vacancy
+                    int vacancyUpdate = Integer.parseInt(trip.getVacancy());
+                    vacancyUpdate--;
+                    String pickUpPoint = pickUpPoints.getSelectedItem().toString();
+                    DatabaseReference dref = firebaseDatabase.getReference("Trip/"+trip.getTripID());
+                    dref.child("vacancy").setValue(vacancyUpdate);
 
+                    //Adding Passenger details
+                    TripJoinerModel joiner = new TripJoinerModel(user.getUid(),passengerName.getText().toString(), passengerAge.getText().toString(), passengerNumber.getText().toString(), pickUpPoint);
+                    databaseReference.child("passengers/"+ user.getUid()).setValue(joiner);
+                    Toast.makeText(ViewTripDetails.this, "Trip Added", Toast.LENGTH_SHORT).show();
+                    Intent intent1 = new Intent(ViewTripDetails.this, HomeActivity.class);
+                    startActivity(intent1);
+                    finish();
+            }
+        });
 
     }
 }

@@ -124,7 +124,7 @@ public class CreateTripFragment extends Fragment {
                                     Date currentDate = new Date();
 
                                     // Convert the stored date to a Date object
-                                    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy", Locale.getDefault());
+                                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
                                     Date storedDateTime = null;
                                     try {
                                         storedDateTime = dateFormat.parse(storedDate);
@@ -146,6 +146,21 @@ public class CreateTripFragment extends Fragment {
                                             dref.setValue(trip);
                                             Toast.makeText(view.getContext(), "Trip Created Successfully", Toast.LENGTH_SHORT).show();
                                             reference.setValue(trip);
+//                                            createTripStartLoc.getText().clear();
+//                                            createTripDestination.getText().clear();
+//                                            date.getText().clear();
+//                                            createTripTime.getText().clear();
+//                                            createTripVacancy.getText().clear();
+//                                            createTripDriverName.getText().clear();
+//                                            createTripDriverNumber.getText().clear();
+//                                            createTripVehicleModel.getText().clear();
+//                                            createTripVehicleNumber.getText().clear();
+//                                            createTripVehicleMilage.getText().clear();
+//                                            pickupPoint1.getText().clear();
+//                                            pickupPoint2.getText().clear();
+//                                            pickupPoint3.getText().clear();
+//                                            pickupPoint4.getText().clear();
+//                                            pickupPoint5.getText().clear();
                                         } else {
                                             Toast.makeText(view.getContext(), "A Trip Already Exists"+storedDateTime, Toast.LENGTH_SHORT).show();
                                         }
