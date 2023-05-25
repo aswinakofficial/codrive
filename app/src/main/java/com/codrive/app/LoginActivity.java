@@ -134,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         });
             } catch (ApiException e) {
-                throw new RuntimeException(e);
+                 throw new RuntimeException(e);
             }
 
         }

@@ -16,6 +16,7 @@
             style="@style/groupStylegray_900"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#3E0303"
             android:gravity="start">
 
             <ImageView
