@@ -26,7 +26,7 @@
             android:textAlignment="viewStart"
             android:text="Search Location"
             android:padding="8dp"
-            android:textColor="@color/lavender"
+            android:textColor="#4C0707"
             android:layout_marginStart="12dp"
             android:layout_marginTop="5dp"
             android:textSize="25dp" />

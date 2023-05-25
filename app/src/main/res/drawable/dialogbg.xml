@@ -4,6 +4,7 @@
     <solid
         android:color="@color/white"/>
 
+
     <corners
         android:topLeftRadius="40dp"
         android:topRightRadius="40dp" />
@@ -15,6 +16,6 @@
 
     <stroke
         android:width="2dp"
-        android:color="@color/lavender"/>
+        android:color="#420303"/>
 
 </shape>

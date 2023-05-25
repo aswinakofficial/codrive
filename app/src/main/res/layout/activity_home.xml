@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lavender"
+    android:background="#510505"
     tools:context=".HomeActivity">
 
 
@@ -42,6 +42,6 @@
         android:src="@drawable/baseline_search_24"
         app:layout_anchor="@id/bottomAppBar"
         app:maxImageSize="40dp"
-        app:tint="@color/lavender" />
+        app:tint="#590808" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

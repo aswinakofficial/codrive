@@ -37,7 +37,7 @@
                     android:padding="8dp"
                     android:text="Create Trip"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/lavender"
+                    android:textColor="#570808"
                     android:textSize="25dp" />
 
                 <ImageView
@@ -130,13 +130,14 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/createTripDate"
-                    android:layout_width="180dp"
+                    android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:drawableRight="@android:drawable/ic_menu_my_calendar"
                     android:drawableTint="@color/black"
                     android:hint="Date"
                     android:inputType="date"
+                    android:textColor="@color/black"
                     android:textColorHint="@color/black" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -144,14 +145,18 @@
                     android:layout_height="match_parent"
                     app:boxBackgroundColor="@color/white"
                     android:layout_marginTop="5dp"
+
                     android:textColorHint="@color/black"
                     android:layout_marginRight="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/createTripTime"
-                        android:layout_width="match_parent"
+                        android:layout_width="150dp"
                         android:layout_height="58dp"
+                        android:drawableRight="@drawable/baseline_schedule_24"
+                        android:drawableTint="#000000"
                         android:hint="Time"
+                        android:textColor="@color/black"
                         android:inputType="time" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -175,6 +180,7 @@
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/baseline_person_24"
                     android:hint="Vaccancy"
+                    android:textColor="@color/black"
                     android:inputType="number" />
 
                 <TextView
@@ -199,7 +205,8 @@
                         android:id="@+id/createTripDriverName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Name" />
+                        android:hint="Name"
+                        android:textColor="@color/black"/>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -239,7 +246,8 @@
                                 android:id="@+id/createTripVehicleModel"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Vehicle Model" />
+                                android:hint="Vehicle Model"
+                                android:textColor="@color/black"/>
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
@@ -253,7 +261,8 @@
                                     android:id="@+id/createTripVehicleNumber"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Registration no:" />
+                                    android:hint="Registration no:"
+                                    android:textColor="@color/black"/>
 
                                 <com.google.android.material.textfield.TextInputLayout
                                     android:layout_width="match_parent"
@@ -267,7 +276,8 @@
                                         android:id="@+id/createTripVehicleMileage"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:hint="Mileage" />
+                                        android:hint="Mileage"
+                                        android:textColor="@color/black"/>
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -403,7 +413,7 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
                                                 android:drawableEnd="@drawable/baseline_add_location_24"
-                                                android:hint="Pickup Point 2"
+                                                android:hint="Pickup Point 4"
                                                 android:textColor="@color/black"
                                                 android:backgroundTint="@color/white"
 
@@ -450,8 +460,9 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
                                         android:layout_marginTop="20dp"
+                                        android:textColor="@color/white"
                                         android:layout_weight="1"
-                                        android:backgroundTint="@color/lavender"
+                                        android:backgroundTint="#4E0707"
                                         android:text="Create Trip"
 
 
