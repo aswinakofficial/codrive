@@ -19,6 +19,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
+
         letsGoButton = findViewById(R.id.letsGoButton);
 
         //Redirection to login class

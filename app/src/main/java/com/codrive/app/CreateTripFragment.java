@@ -124,7 +124,7 @@ public class CreateTripFragment extends Fragment {
                                     Date currentDate = new Date();
 
                                     // Convert the stored date to a Date object
-                                    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy", Locale.getDefault());
+                                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
                                     Date storedDateTime = null;
                                     try {
                                         storedDateTime = dateFormat.parse(storedDate);
