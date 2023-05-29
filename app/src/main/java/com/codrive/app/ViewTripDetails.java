@@ -152,12 +152,16 @@ public class ViewTripDetails extends AppCompatActivity {
                     //Adding Passenger details
                     TripJoinerModel joiner = new TripJoinerModel(user.getUid(),passengerName.getText().toString(), passengerAge.getText().toString(), passengerNumber.getText().toString(), pickUpPoint);
                     databaseReference.child("passengers/"+ passengerName.getText().toString()).setValue(joiner);
+
+                    //Adding trip id to user details
+                    DatabaseReference dref2 = FirebaseDatabase.getInstance().getReference("UserDetails/"+user.getUid());
+                    dref2.child("TripJoined").setValue(trip.getTripID());
+
                     Toast.makeText(ViewTripDetails.this, "Trip Added", Toast.LENGTH_SHORT).show();
                     Intent intent1 = new Intent(ViewTripDetails.this, HomeActivity.class);
                     startActivity(intent1);
                     finish();
             }
         });
-
     }
 }

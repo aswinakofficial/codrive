@@ -1,19 +1,48 @@
 package com.codrive.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class ManageTripFragment extends Fragment {
+    Button createdTrips;
+    Button joinedTrips;
+
+    FirebaseUser user;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_manage_trip, container, false);
+        View view = inflater.inflate(R.layout.fragment_manage_trip, container, false);
+
+        createdTrips = view.findViewById(R.id.createdTrips);
+        joinedTrips = view.findViewById(R.id.joinedTrips);
+
+
+        createdTrips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(view.getContext(), createdTripDetails.class));
+            }
+        });
+
+        joinedTrips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(view.getContext(), joinedTripDetails.class));
+            }
+        });
+
+        return view;
     }
 }
