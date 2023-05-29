@@ -146,6 +146,23 @@ public class CreateTripFragment extends Fragment {
                                             dref.setValue(trip);
                                             Toast.makeText(view.getContext(), "Trip Created Successfully", Toast.LENGTH_SHORT).show();
                                             reference.setValue(trip);
+
+                                            createTripStartLoc.getText().clear();
+                                            createTripDestination.getText().clear();
+                                            date.getText().clear();
+                                            createTripTime.getText().clear();
+                                            createTripVacancy.getText().clear();
+                                            createTripDriverName.getText().clear();
+                                            createTripDriverNumber.getText().clear();
+                                            createTripVehicleModel.getText().clear();
+                                            createTripVehicleNumber.getText().clear();
+                                            createTripVehicleMilage.getText().clear();
+                                            pickupPoint1.getText().clear();
+                                            pickupPoint2.getText().clear();
+                                            pickupPoint3.getText().clear();
+                                            pickupPoint4.getText().clear();
+                                            pickupPoint5.getText().clear();
+
                                         } else {
                                             Toast.makeText(view.getContext(), "A Trip Already Exists"+storedDateTime, Toast.LENGTH_SHORT).show();
                                         }

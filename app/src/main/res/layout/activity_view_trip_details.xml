@@ -39,82 +39,85 @@
                 android:id="@+id/joinStartLocation"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="TextView"
                 android:layout_marginTop="20dp"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:shadowColor="#100F0F"
+                android:text="TextView"
+                android:textColor="#570808"
+                android:textSize="18dp" />
             <TextView
                 android:id="@+id/joindestination"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="TextView"
                 android:layout_marginTop="20dp"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textSize="18dp"
+                android:textColor="#570808"/>
             <TextView
                 android:id="@+id/Date"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="TextView"
                 android:layout_marginTop="20dp"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textSize="18dp"
+                android:textColor="#570808"/>
+
             <TextView
                 android:id="@+id/Time"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="TextView"
                 android:layout_marginTop="20dp"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:shadowColor="#1B1818"
+                android:text="TextView"
+                android:textColor="#570808"
+                android:textSize="18dp" />
             <TextView
                 android:id="@+id/joinvacancy"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="TextView"
                 android:layout_marginTop="20dp"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textSize="18dp"
+                android:textColor="#570808"/>
             <TextView
                 android:id="@+id/joindriverName"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="TextView"
                 android:layout_marginTop="20dp"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textSize="18dp"
+                android:textColor="#570808"/>
             <TextView
                 android:id="@+id/joinDriverNumber"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="TextView"
                 android:layout_marginTop="20dp"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textSize="18dp"
+                android:textColor="#570808"/>
             <TextView
                 android:id="@+id/joinVenicleModel"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="TextView"
                 android:layout_marginTop="20dp"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textSize="18dp"
+                android:textColor="#570808"/>
             <TextView
                 android:id="@+id/joinVehicleNumber"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="TextView"
                 android:layout_marginTop="20dp"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textSize="18dp"
+                android:textColor="#570808"/>
             <TextView
                 android:id="@+id/joinVehicleMileage"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="TextView"
                 android:layout_marginTop="20dp"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textSize="18dp"
+                android:textColor="#570808"/>
             <TextView
                 android:id="@+id/passengerDetails"
                 android:layout_width="wrap_content"
@@ -141,9 +144,11 @@
                     android:id="@+id/Name1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#F1E9E9"
                     android:hint="Name"
+                    android:textColorHint="@color/black"
                     android:inputType="text"
-                    android:textColor="@color/black" />
+                    android:textColor="#570808" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -154,15 +159,17 @@
                 app:boxCornerRadiusTopEnd="20dp"
                 app:boxCornerRadiusTopStart="20dp"
                 android:backgroundTint="@color/white"
-                app:boxStrokeColor="@color/black">
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/age1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#F0E8E8"
                     android:hint="Age"
                     android:inputType="number"
-                    android:textColor="@color/black" />
+                    android:textColor="#570808" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -173,16 +180,20 @@
                 app:boxCornerRadiusTopEnd="20dp"
                 android:backgroundTint="@color/white"
                 app:boxCornerRadiusTopStart="20dp"
-                app:boxStrokeColor="@color/black">
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/gray_900">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phoneNumber1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#EFE7E7"
                     android:hint="Phone no:"
+                    android:inputType="number"
                     android:phoneNumber="true"
-                    android:textColor="@color/black" />
+                    android:textColor="#570808" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <TextView
                 android:id="@+id/selectPickUp"
                 android:layout_width="wrap_content"
@@ -190,17 +201,40 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="5dp"
                 android:padding="8dp"
-                android:text="Select Pickup Points"
+                android:text="Select Pickup Point"
                 android:textAlignment="viewStart"
                 android:textColor="#570808"
                 android:textSize="25dp" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/pickupLocations"
+                android:layout_width="345dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="#570808"
+                android:backgroundTint="#570808"
+                android:gravity="center_horizontal"
+                android:popupBackground="@drawable/rectangle_bg_gray_101_radius_11" />
+
+            <Button
+                android:id="@+id/joinTrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/gray_900"
+                android:text="Join Trip"
+                android:textColor="#FEFEFE"
+                app:cornerRadius="25dp" />
+
+            <TextView
+                android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                />
+                android:text="\n"
+                android:textSize="34sp" />
+
 
         </LinearLayout>
     </ScrollView>

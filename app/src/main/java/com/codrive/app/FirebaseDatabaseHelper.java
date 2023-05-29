@@ -5,6 +5,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,12 +20,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.commons.text.similarity.LevenshteinDistance;
 
 public class FirebaseDatabaseHelper {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
     userModel userModel = new userModel();
+    FirebaseUser user;
 
     public interface DataStatus{
         void DataIsLoaded(userModel userModel);
@@ -41,6 +45,7 @@ public class FirebaseDatabaseHelper {
     public void readUser(String reference, DataStatus dataStatus)
     {
         databaseReference = firebaseDatabase.getReference(reference);
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -69,7 +74,17 @@ public class FirebaseDatabaseHelper {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot tripSnapshot: snapshot.getChildren()){
                     String tripID = tripSnapshot.getKey();
+                    user = FirebaseAuth.getInstance().getCurrentUser();
                     String Destination = tripSnapshot.child("destination").getValue(String.class);
+                    destination.toLowerCase();
+                    Destination.toLowerCase();
+                    Boolean destinationSimilar = destination.equals(Destination);
+//                    LevenshteinDistance distance = new LevenshteinDistance();
+//                    int levenshteinDistance = distance.apply(destination, Destination);
+//                    double similarity = 1 - (double) levenshteinDistance / Math.max(destination.length(), Destination.length());
+
+
+
                     Map<CharSequence, Integer> vector1 = new HashMap<>();
                     String[] words = Destination.toLowerCase().split("\\s+");
                     for (String word : words) {
@@ -92,7 +107,7 @@ public class FirebaseDatabaseHelper {
                     CosineSimilarity cosineSimilarity = new CosineSimilarity();
                     double similarity = cosineSimilarity.cosineSimilarity(vector1, vector2);
 
-                    if (similarity >= 0.33) {
+                    if (similarity >= 0.33 || destinationSimilar) {
                         String startLoc = tripSnapshot.child("startLocation").getValue(String.class);
                         String Date = tripSnapshot.child("date").getValue(String.class);
                         String time = tripSnapshot.child("time").getValue(String.class);
@@ -107,9 +122,11 @@ public class FirebaseDatabaseHelper {
                         String pick3 = tripSnapshot.child("pickupPoint3").getValue(String.class);
                         String pick4 = tripSnapshot.child("pickupPoint4").getValue(String.class);
                         String pick5 = tripSnapshot.child("pickupPoint5").getValue(String.class);
-
-                        tripModel trip = new tripModel(tripID, startLoc, Destination, Date, time, vacancy, driverName, driverNo, vehicleModel, vehicleNo, vehicleMilega, pick1, pick2, pick3, pick4, pick5);
-                        trips.add(trip);
+                        int check_Vacancy = Integer.parseInt(vacancy);
+                        if(check_Vacancy != 0) {
+                            tripModel trip = new tripModel(tripID, startLoc, Destination, Date, time, vacancy, driverName, driverNo, vehicleModel, vehicleNo, vehicleMilega, pick1, pick2, pick3, pick4, pick5);
+                            trips.add(trip);
+                        }
                     } else {
 
                     }

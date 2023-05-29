@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".createdTrips"
+    android:background="@color/gray_900">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dialogbg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trips"
+                android:textColor="@color/gray_900"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+
+            <TextView
+                android:id="@+id/startLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Start Location"
+                android:textSize="18dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/black_900_16"/>
+            <TextView
+                android:id="@+id/destinationLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Destination Location"
+                android:textSize="18dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/black_900_16"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date"
+                android:textSize="18dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/black_900_16"/>
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Time"
+                android:textSize="18dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/black_900_16"/>
+
+            <TextView
+                android:id="@+id/vacancy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vacancy"
+                android:textSize="18dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/black_900_16"/>
+
+            <TextView
+                android:id="@+id/drivername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="DriverName:"
+                android:textSize="18dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/black_900_16"/>
+
+            <TextView
+                android:id="@+id/phnno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone no:"
+                android:textSize="18dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/black_900_16"/>
+
+            <TextView
+                android:id="@+id/Vehiclemodel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vehicle Model"
+                android:textSize="18dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/black_900_16"/>
+
+            <TextView
+                android:id="@+id/Registrationno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Registration No:"
+                android:textSize="18dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/black_900_16"/>
+
+            <TextView
+                android:id="@+id/mileage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mileage"
+                android:textSize="18dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/black_900_16"/>
+
+            <Spinner
+                android:id="@+id/pickuppoints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:tag="pickup" />
+
+            <Button
+                android:id="@+id/viewRouteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="viewRoute" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

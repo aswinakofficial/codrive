@@ -16,6 +16,12 @@
         android:theme="@style/Theme.MyApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".joinedTripDetails"
+            android:exported="false" />
+        <activity
+            android:name=".createdTripDetails"
+            android:exported="false" />
+        <activity
             android:name=".ViewTripDetails"
             android:exported="false" />
         <activity
