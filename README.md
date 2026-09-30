@@ -1,78 +1,25 @@
-
 # codrive
 
-Built with AndroidX Support
+A carpooling app for Android. A driver publishes a trip with the route, vehicle, seats available and total cost. Other people find trips going their way and join them. Built in 2023 as a college project.
 
-Requires Android Studio Arctic Fox | 2020.3.1 or higher.
+## Features
 
-Current Kotlin Version 1.7.20
+- **Create a trip**: pick the start and destination with Google Places autocomplete, then add the vehicle type and model, seats available and total cost
+- **Find and join trips**: browse published trips and join one
+- **Manage trips**: see the trips you've created and the ones you've joined
+- **Accounts**: sign up, log in, reset your password, and a profile page
 
+## Stack
 
-### SDK Versions
+Java on Android, Material Components, Firebase Authentication and Realtime Database, Google Places API for location search, and Retrofit and Glide.
 
-compileSdkVersion 33
+## Run it
 
-buildToolsVersion "30.0.3"
+1. Open the project in Android Studio (Arctic Fox or newer). It targets SDK 33, with a minimum of SDK 23.
+2. Create your own Firebase project with Authentication and Realtime Database, and replace `app/google-services.json` with yours.
+3. Add your own Google Places API key where the app calls the Places API (`models/PlaceApi.java`).
+4. Build and run on an emulator or device.
 
-minSdkVersion 23
+---
 
-targetSdkVersion 33
-
-
-### Libraries
-
-1. Retrofit- REST API Call
-https://square.github.io/retrofit/
-2. Glide - Image Loading and caching.
-https://github.com/bumptech/glide
-3. Material Design Components - Google's latest Material Components.
-https://material.io/develop/android
-4. koin - Dependency Injection
-https://insert-koin.io/
-
-### Figma design guideline for better accuracy
-
-Read our guidelines to increase the accuracy of design conversion to code by optimizing Figma designs. 
-https://docs.dhiwise.com/docs/Designguidelines/intro .
-
-### App Navigation
-
-Check your app\'s UI from the AppNavigation screens of your app.
-
-### Package Structure
-
-
-```
-├── appcomponents       
-│ ├── di                 - Dependency Injection Components 
-│ │ └── MyApp.kt
-│ ├── network            - REST API Call setup
-│ │ ├── ResponseCode.kt
-│ │ └── RetrofitProvider.kt
-│ └── ui                 - Data Binding Utilities
-│     └── CustomBindingAdapter.kt
-├── constants            - Constant Files
-│ ├── IntegerConstants.kt
-│ └── StringConstants.kt
-├── extensions           - Kotlin Extension Function Files
-│ └── Strings.kt
-├── modules              - Application Specific code
-│ └── example            - A module of Application 
-│  ├── ui                - UI handling classes
-│  └── data              - Data Handling classes
-│    ├── viewmodel       - ViewModels for the UI
-│    └── model           - Model for the UI
-└── network              - REST API setup
-  ├── models             - Request/Response Models
-  ├── repository         - Network repository
-  ├── resources          - Common classes for API
-  └── RetrofitService.kt
-```
-### Fonts
-We were unable to find following Fonts, Please add manually to ```app/src/main/res/font``` and uncomment code in respective font family XML files.
-
-```
-robotoromanextrabold
-sfprodisplaysemibold
-sfprodisplayregular
-```
+Part of [Aswin AK's projects](https://aswin.xpar.in/projects/).
