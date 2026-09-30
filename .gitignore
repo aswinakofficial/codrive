@@ -8,3 +8,6 @@ local.properties
 .gradle/buildOutputCleanup/buildOutputCleanup.lock
 .gradle/buildOutputCleanup/outputFiles.bin
 .gradle/file-system.probe
+
+# Gradle caches
+.gradle/
